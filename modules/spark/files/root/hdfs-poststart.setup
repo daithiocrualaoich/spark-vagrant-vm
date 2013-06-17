@@ -1,0 +1,7 @@
+#!/bin/bash -ev
+
+# Make a home directory for the standard Vagrant user on HDFS
+sudo -u hdfs hadoop fs -mkdir -p /user/vagrant
+sudo -u hdfs hadoop fs -chown vagrant:vagrant /user/vagrant
+
+touch /root/hdfs-poststart.done

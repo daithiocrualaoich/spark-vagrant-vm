@@ -1,0 +1,13 @@
+#!/bin/bash -ev
+
+# We are on our own a little because we want a release Spark compiled against
+# Hadoop matching AWS Elastic MapReduce
+
+cd /opt/spark-<%= scope.lookupvar('spark::version') %>
+
+# Set the Hadoop version to build Spark against.
+sed -i 's/val HADOOP_VERSION = "1.0.4"/val HADOOP_VERSION = "1.0.3"/g' project/SparkBuild.scala
+
+./sbt/sbt package
+
+touch /root/spark.done

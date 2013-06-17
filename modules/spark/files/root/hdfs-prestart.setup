@@ -1,0 +1,10 @@
+#!/bin/bash -ev
+
+# Create HDFS filesystem
+/bin/echo "Y" | /usr/bin/hadoop --config /etc/hadoop namenode -format
+
+# The hdfs user needs to own all this on the host filesystem
+chown -R hdfs:hdfs /hadoop
+
+
+touch /root/hdfs-prestart.done

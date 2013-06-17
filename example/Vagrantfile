@@ -1,0 +1,16 @@
+Vagrant::Config.run do |config|
+
+  config.vm.host_name = "spark"
+  config.vm.customize [ "modifyvm", :id, "--name", "spark", "--memory", "2048" ]
+
+  config.vm.box = "spark"
+  config.vm.box_url = "../target/spark.box"
+
+  # config.vm.boot_mode = :gui
+  config.ssh.forward_x11 = true
+
+  config.vm.forward_port 8080, 8080
+  config.vm.forward_port 8081, 8081
+  config.vm.forward_port 50070, 50070
+  config.vm.forward_port 50075, 50075
+end

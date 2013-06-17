@@ -1,0 +1,10 @@
+*.iml
+.idea
+.vagrant
+.project
+.tmp
+*.box
+*~
+target
+example/input
+example/output
