@@ -17,6 +17,11 @@ object Spark extends Build {
 
       organization := "org.boringtechiestuff",
 
+      resolvers ++= Seq(
+        "Akka" at "http://repo.typesafe.com/typesafe/releases",
+        "Spray" at "http://repo.spray.io"
+      ),
+
       libraryDependencies ++= Seq(
         // Match the version of Hadoop on Elastic MapReduce
         "org.apache.hadoop" % "hadoop-core" % "1.0.3",
