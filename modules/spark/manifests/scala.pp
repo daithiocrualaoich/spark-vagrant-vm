@@ -5,7 +5,7 @@ class spark::scala {
 
   $version = '2.9.3'
 
-  $url = 'http://www.scala-lang.org/downloads/distrib/files'
+  $url = 'http://www.scala-lang.org/files/archive/'
   $filename = "scala-${version}.tgz"
   $extracted = "scala-${version}"
 

@@ -10,7 +10,7 @@ class spark {
   require scala
   require git
 
-  $version = '0.7.2'
+  $version = '0.7.3'
 
   $url ='http://spark-project.org/files'
   $filename ="spark-${version}-sources.tgz"
