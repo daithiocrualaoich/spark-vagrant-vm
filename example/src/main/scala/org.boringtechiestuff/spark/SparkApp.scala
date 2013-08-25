@@ -16,7 +16,7 @@ abstract class SparkApp extends App {
     case true => ("local", "", "target/scala-2.9.3/spark-assembly-1-SNAPSHOT.jar")
     case false => (
       "spark://localhost:7077",
-      "/opt/spark-0.7.2",
+      "/opt/spark-0.7.3",
       "hdfs://localhost:9000/lib/spark-assembly-1-SNAPSHOT.jar")
   }
 

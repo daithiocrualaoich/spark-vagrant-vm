@@ -11,6 +11,7 @@ object Spark extends Build {
   val spark = Project("spark", file("."))
     .settings(scalariformSettings: _*)
     .settings(sbtassembly.Plugin.assemblySettings: _*)
+    .settings(net.virtualvoid.sbt.graph.Plugin.graphSettings: _*)
     .settings(
       version := "1-SNAPSHOT",
       scalaVersion := "2.9.3",
@@ -24,12 +25,12 @@ object Spark extends Build {
 
       libraryDependencies ++= Seq(
         // Match the version of Hadoop on Elastic MapReduce
-        "org.apache.hadoop" % "hadoop-core" % "1.0.3",
+        "org.apache.hadoop" % "hadoop-core" % "1.0.3" exclude("org.eclipse.jdt", "core"),
 
         // Spark: Drop the hadoop-core 1.0.4 dependency
-        "org.spark-project" %% "spark-core" % "0.7.2" exclude("org.apache.hadoop", "hadoop-core"),
-        "org.spark-project" %% "spark-bagel" % "0.7.2" exclude("org.apache.hadoop", "hadoop-core"),
-        "org.spark-project" %% "spark-streaming" % "0.7.2" exclude("org.apache.hadoop", "hadoop-core"),
+        "org.spark-project" %% "spark-core" % "0.7.3" exclude("org.apache.hadoop", "hadoop-core") exclude("org.slf4j", "slf4j-log4j12"),
+        "org.spark-project" %% "spark-bagel" % "0.7.3" exclude("org.apache.hadoop", "hadoop-core"),
+        "org.spark-project" %% "spark-streaming" % "0.7.3" exclude("org.apache.hadoop", "hadoop-core") exclude("org.jboss.netty", "netty"),
 
         "org.json4s" %% "json4s-native" % "3.2.4",
         "ch.qos.logback" % "logback-classic" % "1.0.13"

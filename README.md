@@ -65,7 +65,7 @@ Spark slave.
 
 Note on the Versions
 --------------------
-The VM uses Spark 0.7.2 and Hadoop 1.0.3. The reason for the slightly peculiar
+The VM uses Spark 0.7.3 and Hadoop 1.0.3. The reason for the slightly peculiar
 Hadoop is to match the version in Elastic MapReduce which this work originally
 targetted.
 
